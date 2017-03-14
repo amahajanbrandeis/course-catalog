@@ -1,5 +1,5 @@
 class Course < ApplicationRecord
-    has_many_and_belongs_to :subjects
+    has_and_belongs_to_many :subjects
 =begin
     def self.save_data_from_api
       file = File.read('course.json')
