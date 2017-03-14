@@ -17,4 +17,5 @@ class Course < ApplicationRecord
     users.select(&:persisted?)
   end
 =end
+#comment
 end
