@@ -25,6 +25,13 @@ ActiveRecord::Schema.define(version: 20170314024642) do
     t.datetime "updated_at",        null: false
   end
 
+  create_table "courses_subjects", id: false, force: :cascade do |t|
+    t.integer "course_id"
+    t.integer "subject_id"
+    t.index ["course_id"], name: "index_courses_subjects_on_course_id"
+    t.index ["subject_id"], name: "index_courses_subjects_on_subject_id"
+  end
+
   create_table "instructors", force: :cascade do |t|
     t.string   "type"
     t.string   "instructor_id"
@@ -43,13 +50,6 @@ ActiveRecord::Schema.define(version: 20170314024642) do
     t.string   "abbreviation"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-  end
-
-  create_table "subjects_courses", id: false, force: :cascade do |t|
-    t.integer "subject_id"
-    t.integer "course_id"
-    t.index ["course_id"], name: "index_subjects_courses_on_course_id"
-    t.index ["subject_id"], name: "index_subjects_courses_on_subject_id"
   end
 
   create_table "users", force: :cascade do |t|
