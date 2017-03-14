@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  subject_id: MyString
+  name: MyString
+  abbreviation: MyString
+
+two:
+  type: 
+  subject_id: MyString
+  name: MyString
+  abbreviation: MyString
