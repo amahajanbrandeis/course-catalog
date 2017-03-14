@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'subjects/new'
+  get 'subjects/show'
+
   get 'sessions/new'
   get 'users/new'
 
@@ -9,10 +12,12 @@ Rails.application.routes.draw do
     end
   end
 
- get    '/signup',  to: 'users#new'
- get    '/login',   to: 'sessions#new'
- post   '/login',   to: 'sessions#create'
- delete '/logout',  to: 'sessions#destroy'
+  resources :subjects
+
+ get    '/signup',   to: 'users#new'
+ get    '/login',    to: 'sessions#new'
+ post   '/login',    to: 'sessions#create'
+ delete '/logout',   to: 'sessions#destroy'
  resources :users
 
   #get 'catalogs/search'
