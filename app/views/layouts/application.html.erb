@@ -14,10 +14,11 @@
         <%= link_to "sample app", '#', id: "logo" %>
         <nav>
           <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "Home",   @user %></li>
+            <li><%= link_to "Home",   user_path(current_user) %></li>
             <li><%= link_to "Subjects",   '/subjects' %></li>
-            <li><%= link_to "Course", '#' %></li>
-            <li><%= link_to "Instructors", '#' %></li>
+            <li><%= link_to "Course", '/courses' %></li>
+            <li><%= link_to "Instructors", '/instructors' %></li>
+            <li><%= link_to "Log Out", logout_path, method: "delete" %></li>
           </ul>
         </nav>
       </div>

@@ -1,0 +1,19 @@
+<h1>Instructor List</h1>
+
+<table>
+  <tr>
+    <th>Email</th>
+    <th>First</th>
+    <th>Last</th>
+    <th>Instructor ID</th>
+  </tr>
+
+  <% @instructors.each do |instructor| %>
+    <tr>
+      <td><%= instructor.email %></td>
+      <td><%= instructor.first %></td>
+      <td><%= instructor.last %></td>
+      <td><%= instructor.instructor_id %></td>
+    </tr>
+  <% end %>
+</table>
