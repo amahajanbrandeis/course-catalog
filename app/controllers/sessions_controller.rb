@@ -1,5 +1,9 @@
 class SessionsController < ApplicationController
   def new
+    user = current_user
+    if user != nil
+      redirect_to user
+    end
   end
 
   def create
@@ -23,5 +27,12 @@ class SessionsController < ApplicationController
     log_out
     redirect_to root_url
   end
+
+  private
+
+	def current_user
+		User.find_by(id: session[:user_id])
+	end
+
 
 end
