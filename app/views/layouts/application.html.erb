@@ -10,7 +10,7 @@
 
   <body>
     <header class="navbar navbar-fixed-top navbar-inverse">
-      <div class="container">
+      <div>
         <nav>
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to "Home",   user_path(current_user) %></li>
@@ -22,7 +22,7 @@
         </nav>
       </div>
     </header>
-    <div class="container">
+    <div>
       <%= yield %>
     </div>
   </body>
