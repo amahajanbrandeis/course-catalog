@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
     get 'sessions/new'
     get 'users/new'
-#
+
     resources :catalog do
       collection do
         get 'search'
