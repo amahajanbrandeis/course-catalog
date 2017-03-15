@@ -8,9 +8,10 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <!-- <body>
+  <body>
     <header class="navbar navbar-fixed-top navbar-inverse">
-      <div>
+      <div class="container">
+        <%= link_to "sample app", '#', id: "logo" %>
         <nav>
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to "Home",   user_path(current_user) %></li>
@@ -22,7 +23,7 @@
         </nav>
       </div>
     </header>
-    <div>-->
+    <div class="container">
       <%= yield %>
     </div>
   </body>
