@@ -1,12 +1,41 @@
 Rails.application.routes.draw do
 
- get 'courses/new'
+  get 'instructors/new'
 
- get 'courses/show'
+    get 'instructors/show'
 
- get 'courses/index'
+    get 'instructors/index'
 
- resources :courses
+    get 'courses/new'
+
+    get 'courses/show'
+
+    get 'courses/index'
+
+    get 'subjects/new'
+    get 'subjects/show'
+
+    get 'sessions/new'
+    get 'users/new'
+
+    resources :catalog do
+      collection do
+        get 'search'
+      end
+    end
+
+    resources :subjects
+    resources :courses
+    resources :instructors
+    resources :sessions
+
+   get    '/signup',   to: 'users#new'
+   get    '/login',    to: 'sessions#new'
+   post   '/login',    to: 'sessions#create'
+   delete '/logout',   to: 'sessions#destroy'
+   resources :users
+
+
 
  get    '/courses',   to: 'courses#index'
 
