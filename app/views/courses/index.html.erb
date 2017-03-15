@@ -1,11 +1,10 @@
-<h1>Course List</h1>
+<h1>List of Courses</h1>
 
 <table>
   <tr>
     <th>Code</th>
     <th>Name</th>
     <th>Description</th>
-    <th>Independent Study</th>
     <th>Requirements</th>
   </tr>
 
@@ -14,8 +13,14 @@
       <td><%= course.code %></td>
       <td><%= course.name %></td>
       <td><%= course.description %></td>
-      <td><%= course.independent_study %></td>
       <td><%= course.requirements %></td>
     </tr>
   <% end %>
 </table>
+
+<style type="text/css">
+td
+{
+    padding:0 0px 0 15px;
+}
+</style>
