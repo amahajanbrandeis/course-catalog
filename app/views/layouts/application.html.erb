@@ -10,7 +10,6 @@
 
   <body>
     <header class="navbar navbar-fixed-top navbar-inverse">
-      <div class="container">
         <nav>
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to "Home",   user_path(current_user) %></li>
@@ -20,7 +19,6 @@
             <li><%= link_to "Log Out", logout_path, method: "delete" %></li>
           </ul>
         </nav>
-      </div>
     </header>
       <%= yield %>
   </body>
