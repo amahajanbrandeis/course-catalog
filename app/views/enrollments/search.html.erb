@@ -1,0 +1,26 @@
+<h1> Search </h1>
+
+<table>
+  <tr>
+    <th>Code</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Requirements</th>
+  </tr>
+
+  <% @courses.each do |course| %>
+    <tr>
+      <td><%= course.code %></td>
+      <td><%= course.name %></td>
+      <td><%= course.description %></td>
+      <td><%= course.requirements %></td>
+    </tr>
+  <% end %>
+</table>
+
+<style type="text/css">
+td
+{
+    padding:0 0px 0 15px;
+}
+</style>

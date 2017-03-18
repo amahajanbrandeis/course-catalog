@@ -7,4 +7,6 @@ class User < ApplicationRecord
                       uniqueness: { case_sensitive: false }
   has_secure_password
   validates :password, length: { minimum: 6 }
+  has_many :enrollments
+  has_many :courses, through: :enrollments
 end
