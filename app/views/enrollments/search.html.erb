@@ -15,7 +15,10 @@
       <td><%= course.name %></td>
       <td><%= course.description %></td>
       <td><%= course.requirements %></td>
-      <td><%= button_to 'Enroll', {:controller => "courses", :action => "enroll", :course_id => course.id,  :user_id=> session[:user_id]} , :method=>:post  %></td>
+      <td>
+        <% flash.each do |key, value| %> <div class="flash <%= key %>"><%= value %></div> <% end %>
+        <%= button_to 'Enroll', {:controller => "courses", :action => "enroll", :course_id => course.id,  :user_id=> session[:user_id]} , :method=>:post %>
+      </td>
     </tr>
   <% end %>
 </table>
