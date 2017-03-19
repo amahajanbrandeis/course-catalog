@@ -14,24 +14,6 @@
   <strong>Enrolled in:</strong>
 </p>
 
-<table>
-  <tr>
-    <th>Code</th>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Requirements</th>
-  </tr>
-
-  <% @enrolledCourses.each do |course| %>
-    <tr>
-      <td><%= course.code %></td>
-      <td><%= course.name %></td>
-      <td><%= course.description %></td>
-      <td><%= course.requirements %></td>
-    </tr>
-  <% end %>
-</table>
-
 <style type="text/css">
 td
 {
