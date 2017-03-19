@@ -66,8 +66,11 @@ class EnrollmentsController < ApplicationController
     enrollment = p[:enrollment]
     subject_id = enrollment[:subject_id]
     course = enrollment[:course]
-    puts course, subject_id
-    @courses = Course.where("name LIKE ?", "%#{course}")
+    if subject_id.empty?
+      @courses = Course.joins(:subjects).where("courses.name LIKE ?", "%#{course}%")
+    else
+      @courses = Course.joins(:subjects).where("courses.name LIKE ? AND subjects.subject_id = ?", "%#{course}%", "#{subject_id}")
+    end
   end
 
   private

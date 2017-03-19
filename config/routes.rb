@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
     post 'enrollments/search'
 
+    post 'courses/enroll'
+
     resources :catalog do
       collection do
         get 'search'

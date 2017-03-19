@@ -6,6 +6,7 @@
     <th>Name</th>
     <th>Description</th>
     <th>Requirements</th>
+    <th>Button</th>
   </tr>
 
   <% @courses.each do |course| %>
@@ -14,6 +15,7 @@
       <td><%= course.name %></td>
       <td><%= course.description %></td>
       <td><%= course.requirements %></td>
+      <td><%= button_to 'Enroll', {:controller => "courses", :action => "enroll", :course_id => course.id,  :user_id=> session[:user_id]} , :method=>:post  %></td>
     </tr>
   <% end %>
 </table>

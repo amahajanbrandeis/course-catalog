@@ -18,7 +18,7 @@
 
     <p>
       <%= f.label :subject %><br>
-      <%= f.collection_select :subject_id, Subject.all, :subject_id, :name %>
+      <%= f.collection_select :subject_id, Subject.all.order('name ASC'), :subject_id, :name, include_blank: 'Any' %>
     </p>
 
     <p>
