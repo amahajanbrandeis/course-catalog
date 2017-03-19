@@ -8,20 +8,21 @@
       <th colspan="3"></th>
     </tr>
   </thead>
+</table>
 
-  <%= form_for :enrollment, url: "/enrollments/search" do |f| %>
+<%= form_for :enrollment, url: "/enrollments/search" do |f| %>
 
-    <p>
-      <%= f.label :course %><br>
-      <%= f.text_field :course %>
-    </p>
+  <p>
+    <%= f.label :course %><br>
+    <%= f.text_field :course %>
+  </p>
 
-    <p>
-      <%= f.label :subject %><br>
-      <%= f.collection_select :subject_id, Subject.all.order('name ASC'), :subject_id, :name, include_blank: 'Any' %>
-    </p>
+  <p>
+    <%= f.label :subject %><br>
+    <%= f.collection_select :subject_id, Subject.all.order('name ASC'), :subject_id, :name, include_blank: 'Any' %>
+  </p>
 
-    <p>
-      <%= f.submit :Search %>
-    </p>
-  <% end %>
+  <p>
+    <%= f.submit :Search %>
+  </p>
+<% end %>
