@@ -1,6 +1,17 @@
 Rails.application.routes.draw do
 
   resources :enrollments
+  resources :catalog do
+    collection do
+      get 'search'
+    end
+  end
+  resources :subjects
+  resources :courses
+  resources :instructors
+  resources :sessions
+  resources :users
+
     get 'instructors/new'
     get 'instructors/show'
     get 'instructors/index'
@@ -19,18 +30,6 @@ Rails.application.routes.draw do
     post 'enrollments/search'
 
     post 'courses/enroll'
-
-    resources :catalog do
-      collection do
-        get 'search'
-      end
-    end
-    resources :subjects
-    resources :courses
-    resources :instructors
-    resources :sessions
-    resources :users
-    resources :enrollments
 
    get    '/signup',   to: 'users#new'
    get    '/login',    to: 'sessions#new'

@@ -6,6 +6,6 @@ class InstructorsController < ApplicationController
   end
 
   def index
-    @instructors = Instructor.all
+    @instructors = Instructor.all.order('last ASC')
   end
 end

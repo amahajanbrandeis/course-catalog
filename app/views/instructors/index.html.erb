@@ -2,17 +2,17 @@
 
 <table>
   <tr>
-    <th>Email</th>
-    <th>First</th>
     <th>Last</th>
+    <th>First</th>
+    <th>Email</th>
     <th>Instructor ID</th>
   </tr>
 
   <% @instructors.each do |instructor| %>
     <tr>
-      <td><%= instructor.email %></td>
-      <td><%= instructor.first %></td>
       <td><%= instructor.last %></td>
+      <td><%= instructor.first %></td>
+      <td><%= instructor.email %></td>
       <td><%= instructor.instructor_id %></td>
     </tr>
   <% end %>

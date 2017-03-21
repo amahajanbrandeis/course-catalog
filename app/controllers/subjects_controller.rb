@@ -6,6 +6,6 @@ class SubjectsController < ApplicationController
   end
 
   def index
-    @subjects = Subject.all
+    @subjects = Subject.all.order('name ASC')
   end
 end

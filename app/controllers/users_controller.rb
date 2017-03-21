@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   def show
     p = params
     @user = User.find(params[:id])
-    @enrolledCourses = Course.joins(:enrollments).where("enrollments.user_id = ?", "#{@user.id}")
+    @enrolledCourses = Course.joins(:enrollments).where("enrollments.user_id = ?", "#{@user.id}").order('code ASC')
   end
 
 

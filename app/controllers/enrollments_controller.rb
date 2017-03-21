@@ -30,13 +30,13 @@ class EnrollmentsController < ApplicationController
     ts = Subject.arel_table
     if subject_id.empty?
       #@courses = Course.joins(:subjects).where("courses.name LIKE ?", "%#{course}%")
-      @courses = Course.joins(:subjects).where(tc[:name].matches("%#{course}%"))
+      @courses = Course.joins(:subjects).where(tc[:name].matches("%#{course}%")).order('code ASC')
     else
       #@courses = Course.joins(:subjects).where("courses.name LIKE ? AND subjects.subject_id = ?", "%#{course}%", "#{subject_id}")
       mCourses = Course.joins(:subjects).where(tc[:name].matches("%#{course}%"))
       mSubjects = Course.joins(:subjects).where(ts[:subject_id].eq("#{subject_id}"))
 
-      @courses = mCourses.merge(mSubjects)
+      @courses = mCourses.merge(mSubjects).order('code ASC')
     end
   end
 

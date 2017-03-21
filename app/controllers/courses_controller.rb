@@ -6,7 +6,7 @@ class CoursesController < ApplicationController
   end
 
   def index
-    @courses = Course.all
+    @courses = Course.all.order('code ASC')
   end
 
   def enroll
