@@ -28,6 +28,10 @@
       <td><%= course.name %></td>
       <td><%= course.description %></td>
       <td><%= course.requirements %></td>
+      <td>
+        <% flash.each do |key, value| %> <div class="flash <%= key %>"><%= value %></div> <% end %>
+        <%= button_to 'Unenroll', {:controller => "enrollments", :action => "destroy", :course_id => course.id,  :user_id=> session[:user_id]} , :method=>:delete %>
+      </td>
     </tr>
   <% end %>
 </table>
