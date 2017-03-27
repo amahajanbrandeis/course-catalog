@@ -4,7 +4,14 @@ class EnrollmentsController < ApplicationController
   # GET /enrollments
   # GET /enrollments.json
   def index
-    @enrollments = Enrollment.all
+    if params[:enrollment].present?
+      puts ' not nil params'
+      search
+    else
+      puts 'nil params'
+      @courses = Course.all.order('code ASC')
+    end
+
   end
 
   # GET /enrollments/1
@@ -22,6 +29,7 @@ class EnrollmentsController < ApplicationController
   end
 
   def search
+    puts params
     p = params
     enrollment = p[:enrollment]
     subject_id = enrollment[:subject_id]
