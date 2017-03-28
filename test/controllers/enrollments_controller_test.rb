@@ -15,28 +15,10 @@ class EnrollmentsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  #test "should create enrollment" do
-#    assert_difference('Enrollment.count') do
-#      post enrollments_url, params: { enrollment: {  } }
-#    end
-
-#    assert_redirected_to enrollment_url(Enrollment.last)
-#  end
-
   test "should show enrollment" do
     get enrollment_url(@enrollment)
     assert_response :success
   end
-
-#  test "should get edit" do
-#    get edit_enrollment_url(@enrollment)
-#    assert_response :success
-#  end
-
-#  test "should update enrollment" do
-#    patch enrollment_url(@enrollment), params: { enrollment: {  } }
-#    assert_redirected_to enrollment_url(@enrollment)
-#  end
 
   #test "should destroy enrollment" do
   #  assert_difference('Enrollment.count', -1) do
@@ -47,4 +29,11 @@ class EnrollmentsControllerTest < ActionDispatch::IntegrationTest
 
   #  assert_redirected_to enrollments_url
   #end
+  test "should search"
+    post '/signup', params: { user: { name: "Example", email: "test@example.com", password: "password", password_confirmation: "password" } }
+    get login_path
+    assert_template 'sessions/new'
+    post login_path, params: { session: { email: "test@example.com", password: "password" } }
+    get '/search'
+    assert_template '/search'
 end

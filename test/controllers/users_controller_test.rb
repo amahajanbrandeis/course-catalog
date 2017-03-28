@@ -57,7 +57,16 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   test "redirected to log in on logged out access of user page" do
     post users_path, params: { user: { name: "Example", email: "test@example.com", password: "password", password_confirmation: "password" } }
     get '/users/1'
-    assert_redirected_to root_path
+    assert_redirected_to root_url
   end
+
+  #test "enroll user in class" do
+  #  post users_path, params: { user: { name: "Example", email: "test@example.com", password: "password", password_confirmation: "password" } }
+  #  get login_path
+  #  assert_template 'sessions/new'
+  #  post login_path, params: { session: { email: "test@example.com", password: "password" } }
+  #  get '/users/1'
+  #  get enrollment_url
+  #end
 
 end
